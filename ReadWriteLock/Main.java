@@ -21,8 +21,11 @@ public class Main {
             resource1.consume(lock);
         });
 
-        thread1.start();
-        thread2.start();
+        Thread thread4 = new Thread(() -> {
+            resource1.consume(lock);
+        });
+
         thread3.start();
+        thread4.start();
     }
 }
